@@ -1,18 +1,23 @@
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import Body from './components/Body/Body';
+import Footer from './components/Footer/Footer';
+import { render } from '@testing-library/react';
 
-function App() {
-	return (
-		<div className='App'>
-			<header className='App-header'>
-				<img src={logo} className='App-logo' alt='logo' />
-				<p>
-					This React logo sure looks like some sort of strong star,
-					huh?
-				</p>
-			</header>
-		</div>
-	);
+class App extends Component {
+	render() {
+		return (
+			<div className='App'>
+				<body>
+					<Navbar></Navbar>
+					<Body></Body>
+					<Footer></Footer>
+				</body>
+			</div>
+		);
+	}
 }
 
 export default App;
