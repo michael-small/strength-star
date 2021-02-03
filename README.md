@@ -16,4 +16,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Documentation
 
-React's default README encompasing how to run/build/test was moved to `Documentation/ReactStockREADME.md`. The docs also cover proposed code formatting guidlines, component hierarchy, and stack.
+React's default README encompasing how to run/build/test was moved to `Documentation/ReactStockREADME.md`. The docs also cover proposed code formatting guidlines, component hierarchy, stack, and styling guidelines.
