@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SideDrawer from '../SideDrawer/SideDrawer';
 
 export default class Navbar extends Component {
 	render() {
@@ -10,6 +11,7 @@ export default class Navbar extends Component {
 						<h3>RecordDatePicker</h3>
 					</li>
 				</ul>
+				<SideDrawer></SideDrawer>
 			</div>
 		);
 	}
