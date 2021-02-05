@@ -8,3 +8,5 @@ respective component folder, rather than a single dedicated CSS folder.
 
 Alternate styling frameworks could include [Material-UI](https://material-ui.com/). Nate and Michael are familiar with a variant of 
 Material desisgn, via [Angular Material](https://material.angular.io/).
+
+[styled components](https://styled-components.com/) for styling inline styles (a practice that should be used sparingly)

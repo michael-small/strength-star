@@ -4,6 +4,8 @@
 
 [React](https://reactjs.org/)
 
+See `Styling_Guide` doc for proposed styling frameworks/libraries.
+
 ## Backend
 
 [Node.js](https://nodejs.org/en/) with [Express.js](https://expressjs.com/) framework.
