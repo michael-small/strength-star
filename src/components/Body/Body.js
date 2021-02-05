@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Home from '../Home/Home';
 
 export default class Body extends Component {
 	render() {
@@ -7,9 +8,7 @@ export default class Body extends Component {
 				<h1>Body</h1>
 				<ul>
 					{' '}
-					<li>
-						<h2>Home</h2>
-					</li>
+					<Home></Home>
 					<ul>
 						<li>
 							<h3>RecordDatePicker</h3>

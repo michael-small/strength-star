@@ -1,20 +1,39 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Body from './components/Body/Body';
+import Profile from './components/Profile/Profile';
+import DayRecord from './components/Records/DayRecord/DayRecord';
+import AllDayRecords from './components/Records/AllDayRecords/AllDayRecords';
+import EditDayRecord from './components/Records/EditDayRecord/EditDayRecord';
 import Footer from './components/Footer/Footer';
 import { render } from '@testing-library/react';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Home from './components/Home/Home';
 
 class App extends Component {
 	render() {
 		return (
 			<div className='App'>
-				<body>
-					<Navbar></Navbar>
-					<Body></Body>
-					<Footer></Footer>
-				</body>
+				<BrowserRouter>
+					<div>
+						<Navbar></Navbar>
+						<Route exact path='/' component={Home} />
+						<Route exact path='/dayrecord' component={DayRecord} />
+						<Route
+							exact
+							path='/alldayrecords'
+							component={AllDayRecords}
+						/>
+						<Route
+							exact
+							path='/editdayrecord'
+							component={EditDayRecord}
+						/>
+						<Route exact path='/profile' component={Profile} />
+						{/* <Footer></Footer> */}
+					</div>
+				</BrowserRouter>
 			</div>
 		);
 	}

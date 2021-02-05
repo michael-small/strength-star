@@ -6,11 +6,14 @@ subcomponents likely to follow.
 ## Draft 1
 
 * Navbar
+    * SideDrawer 
     * RecordDatePicker 
-* Body
+* Body *(currently not used)*
     * Home
         * RecordDatePicker
-    * DayRecord
-    * EditDayRecord
-    * UserProfile
-* Footer?
+    * Records
+        *  AllDayRecords
+        *  DayRecord
+        *  EditDayRecord
+    * Profile
+* Footer? *(currently not used)*

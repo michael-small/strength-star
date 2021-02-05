@@ -4,12 +4,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import MenuIcon from '@material-ui/icons/Menu';
+import HelpIcon from '@material-ui/icons/Help';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 const useStyles = makeStyles({
 	list: {
@@ -23,10 +24,7 @@ const useStyles = makeStyles({
 export default function TemporaryDrawer() {
 	const classes = useStyles();
 	const [state, setState] = React.useState({
-		top: false,
 		left: false,
-		bottom: false,
-		right: false,
 	});
 
 	const toggleDrawer = (anchor, open) => (event) => {
@@ -40,6 +38,26 @@ export default function TemporaryDrawer() {
 		setState({ ...state, [anchor]: open });
 	};
 
+	const navLinks = [
+		{ page: 'Home', path: '/' },
+		{ page: 'All Day Records', path: '/alldayrecords' },
+		{ page: 'Edit Day Record', path: '/editdayrecord' },
+		{ page: 'Profile', path: '/profile' },
+	];
+
+	const StyledLink = styled(Link)`
+		text-decoration: none;
+		color: inherit;
+
+		&:focus,
+		&:hover,
+		&:visited,
+		&:link,
+		&:active {
+			text-decoration: none;
+		}
+	`;
+
 	const list = (anchor) => (
 		<div
 			className={clsx(classes.list, {
@@ -50,26 +68,15 @@ export default function TemporaryDrawer() {
 			onKeyDown={toggleDrawer(anchor, false)}
 		>
 			<List>
-				{['Inbox', 'Starred', 'Send email', 'Drafts'].map(
-					(text, index) => (
-						<ListItem button key={text}>
+				{navLinks.map((link, index) => (
+					<StyledLink key={index} to={link.path}>
+						<ListItem button>
 							<ListItemIcon>
-								{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+								<HelpIcon></HelpIcon>
 							</ListItemIcon>
-							<ListItemText primary={text} />
+							<ListItemText primary={link.page} />
 						</ListItem>
-					)
-				)}
-			</List>
-			<Divider />
-			<List>
-				{['All mail', 'Trash', 'Spam'].map((text, index) => (
-					<ListItem button key={text}>
-						<ListItemIcon>
-							{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-						</ListItemIcon>
-						<ListItemText primary={text} />
-					</ListItem>
+					</StyledLink>
 				))}
 			</List>
 		</div>
@@ -77,10 +84,10 @@ export default function TemporaryDrawer() {
 
 	return (
 		<div>
-			{['left', 'right', 'top', 'bottom'].map((anchor) => (
+			{['left'].map((anchor) => (
 				<React.Fragment key={anchor}>
 					<Button onClick={toggleDrawer(anchor, true)}>
-						{anchor}
+						<MenuIcon></MenuIcon>
 					</Button>
 					<Drawer
 						anchor={anchor}
