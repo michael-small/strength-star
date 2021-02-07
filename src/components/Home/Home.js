@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CreateRecordButton from '../Records/CreateRecord/CreateRecordButton/CreateRecordButton';
 import RecordDatePicker from '../Records/RecordDatePicker/RecordDatePicker';
 
 export default class Home extends Component {
@@ -11,6 +12,7 @@ export default class Home extends Component {
 					developers that are open to employment.
 				</p>
 				<RecordDatePicker></RecordDatePicker>
+				<CreateRecordButton></CreateRecordButton>
 			</div>
 		);
 	}

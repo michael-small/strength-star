@@ -6,6 +6,7 @@ import Profile from './components/Profile/Profile';
 import DayRecord from './components/Records/DayRecord/DayRecord';
 import AllDayRecords from './components/Records/AllDayRecords/AllDayRecords';
 import EditDayRecord from './components/Records/EditDayRecord/EditDayRecord';
+import CreateRecord from './components/Records/CreateRecord/CreateRecord';
 import Footer from './components/Footer/Footer';
 import { render } from '@testing-library/react';
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -31,6 +32,11 @@ class App extends Component {
 							component={EditDayRecord}
 						/>
 						<Route exact path='/profile' component={Profile} />
+						<Route
+							exact
+							path='/createrecord'
+							component={CreateRecord}
+						/>
 						{/* <Footer></Footer> */}
 					</div>
 				</BrowserRouter>

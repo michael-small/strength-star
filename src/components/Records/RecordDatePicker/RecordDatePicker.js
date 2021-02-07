@@ -27,7 +27,7 @@ export default function RecordDatePicker() {
 				<KeyboardDatePicker
 					margin='normal'
 					id='date-picker-dialog'
-					label='Date picker dialog'
+					label='Pick date to view'
 					format='MM/dd/yyyy'
 					value={selectedDate}
 					onChange={handleDateChange}
