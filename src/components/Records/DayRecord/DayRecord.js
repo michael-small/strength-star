@@ -22,7 +22,7 @@ export default class DayRecord extends Component {
 		return (
 			<div className={classes.Day}>
 				{/* Of course these will be props that `AllDayRecords` will iterate on later, I'm just lazy right now and about to go to work*/}
-				<h2>DayRecord</h2>
+				<h2>{this.props.date}</h2>
 				<b>Lbs: 25</b> &nbsp;&nbsp;&nbsp; <b>Sets: 5</b>{' '}
 				&nbsp;&nbsp;&nbsp; <b>Reps per set: 5</b>
 				{/* Bad styling practices go <br> (TODO: don't do this) <3 Paul */}

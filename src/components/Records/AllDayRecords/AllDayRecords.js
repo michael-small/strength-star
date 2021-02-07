@@ -12,8 +12,8 @@ export default class AllDayRecords extends Component {
 				<CreateRecordButton></CreateRecordButton>
 
 				<RecordDatePicker></RecordDatePicker>
-				<DayRecord></DayRecord>
-				<DayRecord></DayRecord>
+				<DayRecord date='Mon, Feb 6th'></DayRecord>
+				<DayRecord date='Tues, Feb 7th'></DayRecord>
 			</div>
 		);
 	}
