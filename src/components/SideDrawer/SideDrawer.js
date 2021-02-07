@@ -1,16 +1,29 @@
 import React from 'react';
-import clsx from 'clsx';
+import { Link } from 'react-router-dom';
+
+// MUI
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MenuIcon from '@material-ui/icons/Menu';
-import HelpIcon from '@material-ui/icons/Help';
-import { Link } from 'react-router-dom';
+
+// CSS
+import clsx from 'clsx';
 import styled from 'styled-components';
+
+// ICONS
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+// ----conditional icons----
+import HomeIcon from '@material-ui/icons/Home';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import AssignmentIcon from '@material-ui/icons/Assignment';
+import EditIcon from '@material-ui/icons/Edit';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import HelpIcon from '@material-ui/icons/Help';
+// ----misc icons----
+import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles({
 	list: {
@@ -27,6 +40,19 @@ export default function TemporaryDrawer() {
 		left: false,
 	});
 
+	const StyledLink = styled(Link)`
+		text-decoration: none;
+		color: inherit;
+
+		&:focus,
+		&:hover,
+		&:visited,
+		&:link,
+		&:active {
+			text-decoration: none;
+		}
+	`;
+
 	const toggleDrawer = (anchor, open) => (event) => {
 		if (
 			event.type === 'keydown' &&
@@ -40,23 +66,11 @@ export default function TemporaryDrawer() {
 
 	const navLinks = [
 		{ page: 'Home', path: '/' },
+		{ page: 'Create Record', path: '/createrecord' },
 		{ page: 'All Day Records', path: '/alldayrecords' },
 		{ page: 'Edit Day Record', path: '/editdayrecord' },
 		{ page: 'Profile', path: '/profile' },
 	];
-
-	const StyledLink = styled(Link)`
-		text-decoration: none;
-		color: inherit;
-
-		&:focus,
-		&:hover,
-		&:visited,
-		&:link,
-		&:active {
-			text-decoration: none;
-		}
-	`;
 
 	const list = (anchor) => (
 		<div
@@ -72,7 +86,19 @@ export default function TemporaryDrawer() {
 					<StyledLink key={index} to={link.path}>
 						<ListItem button>
 							<ListItemIcon>
-								<HelpIcon></HelpIcon>
+								{link.page === 'Home' ? (
+									<HomeIcon />
+								) : link.page === 'Create Record' ? (
+									<AddCircleOutlineIcon />
+								) : link.page === 'All Day Records' ? (
+									<AssignmentIcon />
+								) : link.page === 'Edit Day Record' ? (
+									<EditIcon />
+								) : link.page === 'Profile' ? (
+									<AccountCircleIcon />
+								) : (
+									<HelpIcon />
+								)}
 							</ListItemIcon>
 							<ListItemText primary={link.page} />
 						</ListItem>
