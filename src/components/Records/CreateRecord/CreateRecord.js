@@ -29,16 +29,19 @@ export default class CreateRecord extends Component {
 						id='outlined-basic'
 						label='Lbs'
 						variant='outlined'
+						type='number'
 					/>{' '}
 					<StyledTextField
 						id='outlined-basic'
 						label='Sets'
 						variant='outlined'
+						type='number'
 					/>{' '}
 					<StyledTextField
 						id='outlined-basic'
 						label='Rep per set'
 						variant='outlined'
+						type='number'
 					/>{' '}
 					<StyledTextField
 						id='outlined-basic'
