@@ -24,12 +24,11 @@ export default class DayRecord extends Component {
 			margin-top: 0.5rem;
 		`;
 
-		const areNotes = this.props.notes.length > 0;
-
 		return (
 			<div className={classes.Day}>
 				{/* Of course these will be props that `AllDayRecords` will iterate on later, I'm just lazy right now and about to go to work*/}
 				<h2>{this.props.date}</h2>
+				<h2>{this.props.workout}</h2>
 				<b>Lbs: {this.props.lbs}</b> &nbsp;&nbsp;&nbsp;{' '}
 				<b>Sets: {this.props.sets}</b> &nbsp;&nbsp;&nbsp;{' '}
 				<b>Reps per set: {this.props.repsPerSet}</b>

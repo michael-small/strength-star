@@ -3,6 +3,7 @@ import DayRecord from '../DayRecord/DayRecord';
 import RecordDatePicker from '../RecordDatePicker/RecordDatePicker';
 import CreateRecordButton from '../CreateRecord/CreateRecordButton/CreateRecordButton';
 import days from './dayRecords.json';
+import { styled } from '@material-ui/core';
 
 export default class AllDayRecords extends Component {
 	state = {
@@ -22,15 +23,16 @@ export default class AllDayRecords extends Component {
 				<CreateRecordButton></CreateRecordButton>
 				<RecordDatePicker></RecordDatePicker>
 
-				{days.map(function (name, index) {
+				{days.map(function (workout, index) {
 					return (
 						<div key={index}>
 							<DayRecord
-								date={name.date}
-								lbs={name.lbs}
-								sets={name.sets}
-								repsPerSet={name.repsPerSet}
-								notes={name.notes}
+								date={workout.date}
+								workout={workout.workout}
+								lbs={workout.lbs}
+								sets={workout.sets}
+								repsPerSet={workout.repsPerSet}
+								notes={workout.notes}
 							></DayRecord>
 						</div>
 					);
