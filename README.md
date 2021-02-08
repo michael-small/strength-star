@@ -12,7 +12,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## How to run
 
-`npm run start`
+`npm run dev`
+
+Starts both the Express.js backend and then the React.js frontend.
 
 ## Documentation
 
