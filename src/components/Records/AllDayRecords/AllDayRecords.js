@@ -10,6 +10,7 @@ export default class AllDayRecords extends Component {
 		days: [],
 	};
 
+	// This will be used to sort by date, and later it will need to sort by something between same dates
 	sortByDate() {
 		this.setState((prevState) => {
 			this.state.days.sort((a, b) => a.date - b.date);

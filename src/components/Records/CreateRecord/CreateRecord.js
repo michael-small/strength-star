@@ -22,6 +22,11 @@ export default class CreateRecord extends Component {
 					{/* TODO: iterate each one with params, akin to how sidebar items are mapped*/}
 					<StyledTextField
 						id='outlined-basic'
+						label='Workout Title'
+						variant='outlined'
+					/>{' '}
+					<StyledTextField
+						id='outlined-basic'
 						label='Lbs'
 						variant='outlined'
 					/>{' '}
