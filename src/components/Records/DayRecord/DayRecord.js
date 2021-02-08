@@ -19,6 +19,11 @@ export default class DayRecord extends Component {
 			}
 		`;
 
+		const StyledButton = styled(Button)`
+			border: 1px solid black;
+			margin-top: 0.5rem;
+		`;
+
 		const areNotes = this.props.notes.length > 0;
 
 		return (
@@ -31,13 +36,11 @@ export default class DayRecord extends Component {
 				{this.props.notes.length > 0 && (
 					<p>Notes: {this.props.notes}</p>
 				)}
-				{/* Bad styling practices go <br> (TODO: don't do this) <3 Paul */}
-				<br />
-				<Button style={{ border: '1px solid black' }}>
+				<StyledButton>
 					<StyledLink to={'/editdayrecord'}>
 						Edit Day Record
 					</StyledLink>
-				</Button>
+				</StyledButton>
 			</div>
 		);
 	}
